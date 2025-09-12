@@ -16,14 +16,14 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-          Discover Your Next
+          Discover Your Soul
           <span className="block bg-gradient-to-r from-sunset to-sunset-light bg-clip-text text-transparent">
-            Adventure
+            In This Vast World
           </span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md">
-          Explore breathtaking destinations, create unforgettable memories, and experience the world like never before.
+          Explore breathtaking sitings, create unforgettable memories, and experience the world like never before.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -31,7 +31,7 @@ const Hero = () => {
             size="lg" 
             className="bg-gradient-hero text-white border-0 hover:scale-105 transition-all duration-300 shadow-luxury px-8 py-6 text-lg font-semibold"
           >
-            Explore Destinations
+            Explore Monastries
           </Button>
           <Button 
             variant="outline" 
