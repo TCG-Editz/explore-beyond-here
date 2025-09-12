@@ -134,7 +134,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-primary-foreground/70">
-          <p>&copy; 2024 Wanderlust. All rights reserved.</p>
+          <p>&copy; 2024 Soul-Sikkim. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-sunset transition-colors duration-300">Privacy Policy</a>
             <a href="#" className="hover:text-sunset transition-colors duration-300">Terms of Service</a>
