@@ -9,7 +9,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+123456 7890",
       description: "Available 24/7 for emergencies"
     },
     {
