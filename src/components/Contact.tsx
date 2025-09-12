@@ -9,20 +9,20 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+ 67986",
+      details: "+91 xxxxxxxxxx",
       description: "Available 24/7 for emergencies"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: "info@wanderlust.com",
-      description: "We'll respond within 24 hours"
+      details: "info@soulsikkim.com",
+      description: "We'll try respond within as soon as possible"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "123 Travel Street, Adventure City",
-      description: "Mon-Fri: 9AM-6PM"
+      details: "Sikkim",
+      description: "Anytime"
     },
     {
       icon: Clock,
