@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import maldivesImage from "@/assets/maldives-resort.jpg";
+import maldivesImage from "@/assets/13.jpg";
 import mountainImage from "@/assets/mountain-adventure.jpg";
 import culturalImage from "@/assets/cultural-heritage.jpg";
 
