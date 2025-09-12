@@ -50,11 +50,11 @@ const Footer = () => {
               <div className="p-2 rounded-full bg-gradient-hero">
                 <Compass className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold">Wanderlust</span>
+              <span className="text-2xl font-bold">Soul-Sikkim</span>
             </div>
             
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Your trusted travel companion for discovering the world's most beautiful destinations. 
+              Your trusted travel companion for discovering the world's most Monastries. 
               We create unforgettable experiences that last a lifetime.
             </p>
             
