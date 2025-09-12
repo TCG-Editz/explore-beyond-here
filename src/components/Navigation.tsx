@@ -38,7 +38,7 @@ const Navigation = () => {
             <span className={`text-2xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-foreground' : 'text-white'
             }`}>
-              Wanderlust
+              Soul-Sikkim
             </span>
           </div>
 
