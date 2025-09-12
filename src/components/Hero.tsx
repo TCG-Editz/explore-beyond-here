@@ -23,7 +23,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md">
-          Explore breathtaking sitings, create unforgettable memories, and experience the world like never before.
+          Explore breathtaking sightings, create unforgettable memories, and experience the world like never before.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
