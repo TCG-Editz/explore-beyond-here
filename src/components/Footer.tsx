@@ -1,4 +1,5 @@
 import { Compass, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import Logo from "@/assets/final_logo.jpeg";
 
 const Footer = () => {
   const footerLinks = {
@@ -46,10 +47,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="p-2 rounded-full bg-gradient-hero">
-                <Compass className="w-6 h-6 text-white" />
-              </div>
+            <div className="flex items-center space-x-2">
+            <div className="p-1.5 rounded-full bg-gradient-hero">
+              <img
+                src={Logo}
+                alt="Soul-Sikkim Logo"
+                className="w-8 h-8 rounded-full"/>
+              </div>  
               <span className="text-2xl font-bold">Soul-Sikkim</span>
             </div>
             
@@ -134,7 +138,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-primary-foreground/70">
-          <p>&copy; 2024 Soul-Sikkim. All rights reserved.</p>
+          <p>&copy; 2025 Soul-Sikkim. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-sunset transition-colors duration-300">Privacy Policy</a>
             <a href="#" className="hover:text-sunset transition-colors duration-300">Terms of Service</a>
