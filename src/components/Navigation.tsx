@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Compass } from "lucide-react";
+import logo from "@/assets/WhatsApp Image 2025-09-13 at 11.25.03 AM.jpeg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="p-2 rounded-full bg-gradient-hero">
-              <Compass className="w-6 h-6 text-white" />
+              <logo className="w-6 h-6 text-white" />
             </div>
             <span className={`text-2xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-foreground' : 'text-white'
