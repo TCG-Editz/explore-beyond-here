@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import maldivesImage from "@/assets/13.jpg";
 import mountainImage from "@/assets/mountain-adventure.jpg";
 import culturalImage from "@/assets/cultural-heritage.jpg";
@@ -35,6 +36,15 @@ const destinations = [
 ];
 
 const Destinations = () => {
+  const navigate = useNavigate();
+
+  const handleExploreClick = (destinationId: number) => {
+    if (destinationId === 1) { // Tropical Paradise
+      navigate('/tropical-paradise');
+    }
+    // Add more destinations as needed
+  };
+  
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/30">
       <div className="max-w-7xl mx-auto">
@@ -83,6 +93,7 @@ const Destinations = () => {
                 
                 <Button 
                   className="w-full bg-gradient-hero text-white border-0 hover:scale-105 transition-all duration-300 group-hover:shadow-lg"
+                  onClick={() => handleExploreClick(destination.id)}                
                 >
                   Explore Now
                 </Button>
