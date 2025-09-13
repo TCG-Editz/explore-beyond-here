@@ -7,7 +7,7 @@ import culturalImage from "@/assets/cultural-heritage.jpg";
 const destinations = [
   {
     id: 1,
-    title: "Tropical Paradise",
+    title: "Monastries",
     description: "Pristine beaches, crystal waters, and luxury resorts await you in our tropical destinations.",
     image: maldivesImage,
     price: "From $299/night",
