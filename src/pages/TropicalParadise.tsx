@@ -18,23 +18,65 @@ const TropicalParadise = () => {
 
   const packages = [
     {
-      name: "Romantic Getaway",
+      name: "Monastry 1",
       duration: "7 days",
-      price: "$2,099",
-      includes: ["Overwater bungalow", "Private dining", "Couple's spa", "Sunset cruise"]
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Adventure Package", 
+      name: "Monastry 2", 
       duration: "10 days",
-      price: "$2,899",
-      includes: ["Beach villa", "Water sports", "Diving excursions", "Island hopping"]
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Luxury Escape",
+      name: "Monastry 3",
       duration: "14 days", 
-      price: "$4,299",
-      includes: ["Presidential suite", "Private yacht", "Personal butler", "All activities"]
-    }
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Monastry 4",
+      duration: "7 days",
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Monastry 5",
+      duration: "6 days",
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Monastry 6",
+      duration: "5 days",
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Monastry 7",
+      duration: "4 days",
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Monastry 8",
+      duration: "3 days",
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Monastry 9",
+      duration: "2 days",
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Monastry 10",
+      duration: "1 day",
+      price: "****",
+      includes: ["1.", "2.", "3.", "4."]
+    },
   ];
 
   return (
@@ -48,7 +90,7 @@ const TropicalParadise = () => {
             className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Destinations
+            Back to Services
           </Button>
         </div>
       </header>
@@ -64,15 +106,15 @@ const TropicalParadise = () => {
         <div className="absolute inset-0 flex items-center justify-center text-center text-white">
           <div className="max-w-4xl px-4">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Tropical Paradise
+              Monastries
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Pristine beaches, crystal waters, and luxury resorts await you
+              Explore Those Greatest Pilgrims, Crystal Waters, And Massive Monuments That Awaits For You
             </p>
             <div className="flex items-center justify-center gap-6 text-white/80">
               <div className="flex items-center gap-2">
                 <MapPin className="h-5 w-5" />
-                <span>Maldives Islands</span>
+                <span>Sikkim</span>
               </div>
               <div className="flex items-center gap-2">
                 <Star className="h-5 w-5 fill-current" />
@@ -93,7 +135,7 @@ const TropicalParadise = () => {
         <section className="mb-16">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Experience Paradise on Earth
+              Experience Different Monastries
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Escape to a world where turquoise waters meet powder-soft beaches, and luxury knows no bounds. 
@@ -122,7 +164,7 @@ const TropicalParadise = () => {
 
         {/* Packages */}
         <section className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-12">Choose Your Experience</h3>
+          <h3 className="text-2xl font-bold text-center mb-12">Choose Your Monastry</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {packages.map((pkg, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -160,7 +202,7 @@ const TropicalParadise = () => {
           <h3 className="text-3xl font-bold mb-4">Ready for Your Dream Vacation?</h3>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Don't wait to experience the vacation of a lifetime. Our travel experts are here to help you 
-            plan every detail of your tropical paradise escape.
+            plan every detail of your Monastry visit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70">
@@ -168,7 +210,7 @@ const TropicalParadise = () => {
               Contact Our Experts
             </Button>
             <Button variant="outline" size="lg">
-              View More Destinations
+              View More Services
             </Button>
           </div>
         </section>
