@@ -8,27 +8,27 @@ const destinations = [
   {
     id: 1,
     title: "Monastries",
-    description: "Pristine beaches, crystal waters, and luxury resorts await you in our tropical destinations.",
+    description: "View those vast Monastries and feel them just by scrolling.",
     image: maldivesImage,
-    price: "From $299/night",
+    price: "none",
     duration: "7-14 days",
-    category: "Beach & Islands"
+    category: "Vast Monastries and 360° view"
   },
   {
     id: 2,
-    title: "Mountain Adventures",
-    description: "Experience breathtaking alpine landscapes and thrilling outdoor activities.",
+    title: "Tourist Spots",
+    description: "Experience breathtaking landscapes and thrilling outdoor spots where u can have fun.",
     image: mountainImage,
-    price: "From $199/night",
+    price: "none",
     duration: "5-10 days",
-    category: "Adventure & Nature"
+    category: "Adventure & Tourism"
   },
   {
     id: 3,
     title: "Cultural Heritage",
     description: "Immerse yourself in rich history, ancient traditions, and architectural wonders.",
     image: culturalImage,
-    price: "From $149/night",
+    price: "none",
     duration: "4-8 days",
     category: "Culture & History"
   }
@@ -40,7 +40,7 @@ const Destinations = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Featured Destinations
+            Featured Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover our handpicked selection of extraordinary places that will take your breath away
