@@ -4,9 +4,9 @@ import { Plane, MapPin, Camera, Shield, Clock, Star } from "lucide-react";
 const services = [
   {
     icon: Plane,
-    title: "Flight Booking",
+    title: "360º View of Monastries",
     description: "Find the best deals on flights worldwide with our exclusive partnerships.",
-    features: ["24/7 Support", "Best Price Guarantee", "Flexible Booking"]
+    features: ["24/7 Support", "Best Quality Tour", "Easy to use"]
   },
   {
     icon: MapPin,
@@ -16,7 +16,7 @@ const services = [
   },
   {
     icon: Camera,
-    title: "Photography Tours",
+    title: "Digital Archives",
     description: "Capture stunning memories with our professional photography guides.",
     features: ["Pro Equipment", "Expert Guidance", "Edited Photos"]
   },
