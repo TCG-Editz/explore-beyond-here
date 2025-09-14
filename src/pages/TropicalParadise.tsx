@@ -188,7 +188,31 @@ const TropicalParadise = () => {
                     ))}
                   </div>
                   
-                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70">
+                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+                          onClick={() => {
+                      if (pkg.name === "Monastry 1") {
+                        navigate('/Monastry1');
+                      } else if (pkg.name === "Monastry 2") {
+                        navigate('/Monastry2');
+                      } else if (pkg.name === "Monastry 3") {
+                        navigate('/Monastry3');
+                      } else if (pkg.name === "Monastry 4") {
+                        navigate('/Monastry4');
+                      } else if (pkg.name === "Monastry 5") {
+                        navigate('/Monastry5');
+                      } else if (pkg.name === "Monastry 6") {
+                        navigate('/Monastry6');
+                      } else if (pkg.name === "Monastry 7") {
+                        navigate('/Monastry7');
+                      } else if (pkg.name === "Monastry 8") {
+                        navigate('/Monastry8');
+                      } else if (pkg.name === "Monastry 9") {
+                        navigate('/Monastry9');
+                      } else if (pkg.name === "Monastry 10") {
+                        navigate('/Monastry10');
+                      }
+                    }}
+                  >
                     Book Now
                   </Button>
                 </CardContent>
