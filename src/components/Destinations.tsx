@@ -32,6 +32,15 @@ const destinations = [
     price: "none",
     duration: "4-8 days",
     category: "Culture & History"
+  },
+  {
+    id: 4,
+    title: "Digital Archive",
+    description: "Immerse yourself in rich history, ancient traditions, and architectural wonders.",
+    image: culturalImage,
+    price: "none",
+    duration: "0 days",
+    category: "Photos"
   }
 ];
 
