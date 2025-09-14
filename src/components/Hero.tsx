@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/13.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -30,6 +32,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="bg-gradient-hero text-white border-0 hover:scale-105 transition-all duration-300 shadow-luxury px-8 py-6 text-lg font-semibold"
+            onClick={() => navigate("/tropical-paradise")}
           >
             Explore Monastries
           </Button>
