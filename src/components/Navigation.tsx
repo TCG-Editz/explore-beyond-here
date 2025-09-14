@@ -17,7 +17,7 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: "Monastries", href: "/tropical-paradise" },
+    { label: "Monastries", href: "tropical-paradise" },
     { label: "Services", href: "#services" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" }
