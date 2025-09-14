@@ -12,7 +12,7 @@ const Monastry1 = () => {
   const navigate = useNavigate();
 
   const packageDetails = {
-    name: "Romantic Getaway",
+    name: "Monastry1",
     duration: "7 days / 6 nights",
     price: "$2,099",
     description: "Perfect for couples seeking intimacy and romance in paradise",
@@ -37,7 +37,7 @@ const Monastry1 = () => {
             className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Packages
+            Back to other Monastries
           </Button>
         </div>
       </header>
@@ -88,7 +88,7 @@ const Monastry1 = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Palmtree className="h-5 w-5 text-primary" />
-                  Package Highlights
+                  Monastry Highlights
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -105,7 +105,7 @@ const Monastry1 = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-primary" />
-                  7-Day Romantic Itinerary
+                  7-Day Monastry Trip
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">

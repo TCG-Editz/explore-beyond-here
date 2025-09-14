@@ -213,7 +213,7 @@ const TropicalParadise = () => {
                       }
                     }}
                   >
-                    Book Now
+                    Explore
                   </Button>
                 </CardContent>
               </Card>
