@@ -111,20 +111,20 @@ const Monastry1 = () => {
               <CardContent className="space-y-4">
                 <div className="space-y-3 text-sm">
                   <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 1-2: Arrival & Overwater Bliss</h5>
-                    <p className="text-muted-foreground">Private seaplane transfer to your overwater bungalow. Welcome champagne ceremony at sunset. Private beach dinner under the stars with live acoustic music.</p>
+                    <h5 className="font-semibold">Day 1-2: Arrival</h5>
+                    <p className="text-muted-foreground">text here</p>
                   </div>
                   <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 3-4: Underwater Adventures</h5>
-                    <p className="text-muted-foreground">Couples snorkeling with marine biologist guide. Private yacht sunset cruise with champagne tasting. Floating breakfast served in your lagoon.</p>
+                    <h5 className="font-semibold">Day 3-4: ---------</h5>
+                    <p className="text-muted-foreground">text here</p>
                   </div>
                   <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 5-6: Spa & Romance</h5>
-                    <p className="text-muted-foreground">Couples spa treatment in overwater pavilion. Professional romantic photoshoot at golden hour. Private cooking class with world-renowned chef.</p>
+                    <h5 className="font-semibold">Day 5-6: ---------</h5>
+                    <p className="text-muted-foreground">text here</p>
                   </div>
                   <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 7: Farewell Paradise</h5>
-                    <p className="text-muted-foreground">Final breakfast in bed. Memory book presentation ceremony. Private transfer with champagne farewell toast.</p>
+                    <h5 className="font-semibold">Day 7: Farewell </h5>
+                    <p className="text-muted-foreground">text here!</p>
                   </div>
                 </div>
               </CardContent>
@@ -134,7 +134,7 @@ const Monastry1 = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Waves className="h-5 w-5 text-primary" />
-                  Romantic Experiences
+                  Monastry Experiences
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -144,11 +144,11 @@ const Monastry1 = () => {
                     <p className="text-sm text-muted-foreground">Your private sanctuary features a glass-floor panel for underwater viewing, direct lagoon access, and a spacious deck with daybed. Watch tropical fish swim beneath your feet while enjoying morning coffee.</p>
                   </div>
                   <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Culinary Romance</h5>
+                    <h5 className="font-semibold mb-2">Culinary </h5>
                     <p className="text-sm text-muted-foreground">Savor intimate dining experiences from floating breakfast trays to torchlit beach dinners. Your personal chef creates customized menus featuring fresh local seafood, tropical fruits, and international cuisine.</p>
                   </div>
                   <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Couple's Wellness Journey</h5>
+                    <h5 className="font-semibold mb-2">Wellness Journey</h5>
                     <p className="text-sm text-muted-foreground">Indulge in synchronized spa treatments using indigenous ingredients like coconut oil and sea salt. Yoga sessions at sunrise, meditation by moonlight, and rejuvenating treatments in overwater spa pavilions.</p>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ const Monastry1 = () => {
           <div>
             <Card>
               <CardHeader>
-                <CardTitle>Book Your Romantic Getaway</CardTitle>
+                <CardTitle>Book Your Monastry1</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
@@ -219,7 +219,7 @@ const Monastry1 = () => {
                   
                   <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70" size="lg">
                     <Heart className="h-5 w-5 mr-2" />
-                    Book Romantic Getaway
+                    Book Monastry1 
                   </Button>
                   
                   <p className="text-xs text-muted-foreground text-center mt-4">
