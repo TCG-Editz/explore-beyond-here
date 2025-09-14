@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="bg-gradient-hero text-white border-0 hover:scale-105 transition-all duration-300 shadow-luxury px-8 py-6 text-lg font-semibold"
+            className="bg-gradient-hero text-blue border-0 hover:scale-105 transition-all duration-300 shadow-luxury px-8 py-6 text-lg font-semibold"
             onClick={() => navigate("/tropical-paradise")}
           >
             Explore Monastries
