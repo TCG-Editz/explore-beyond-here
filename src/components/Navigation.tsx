@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Logo from "@/assets/final_logo.jpeg";
-import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,14 +23,7 @@ const Navigation = () => {
     { label: "Contact", href: "#contact" }
   ];
   
-  {navItems.map((item) => (
-  <Link key={item.label} to={item.href} className="hover:text-blue-500">
-    {item.label}
-  </Link>
-))}
-
-
-  return (
+   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
