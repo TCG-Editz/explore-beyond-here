@@ -41,6 +41,15 @@ const destinations = [
     price: "none",
     duration: "0 days",
     category: "Photos"
+  },
+  {
+    id: 5,
+    title: "Handicrafts",
+    description: "Experience breathtaking landscapes and thrilling outdoor spots where u can have fun.",
+    image: mountainImage,
+    price: "none",
+    duration: "5-10 days",
+    category: "Crafts"
   }
 ];
 
