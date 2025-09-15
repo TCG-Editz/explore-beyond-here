@@ -16,7 +16,7 @@ import Monastry7 from "@/pages/Monastry7";
 import Monastry8 from "@/pages/Monastry8";
 import Monastry9 from "@/pages/Monastry9";
 import Monastry10 from "@/pages/Monastry10";
-import MapPage from "@/pages/Mappage";
+import MapPage from "@/pages/MapPage";
 
 
 const queryClient = new QueryClient();
