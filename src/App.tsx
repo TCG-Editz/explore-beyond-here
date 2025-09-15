@@ -16,6 +16,7 @@ import Monastry7 from "@/pages/Monastry7";
 import Monastry8 from "@/pages/Monastry8";
 import Monastry9 from "@/pages/Monastry9";
 import Monastry10 from "@/pages/Monastry10";
+import MapPage from "@/pages/Mappage";
 
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/Monastry8" element={<Monastry8 />} />
           <Route path="/Monastry9" element={<Monastry9 />} />
           <Route path="/Monastry10" element={<Monastry10 />} />
+          <Route path="/map" element={<MapPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

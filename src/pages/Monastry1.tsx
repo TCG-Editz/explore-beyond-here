@@ -217,9 +217,12 @@ const Monastry1 = () => {
                     <span className="text-2xl font-bold text-primary">{packageDetails.price}</span>
                   </div>
                   
-                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70" size="lg">
+                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70" size="lg"
+                    onClick={() => navigate("/map")}
+                  >
                     <Heart className="h-5 w-5 mr-2" />
-                    Book Monastry1 
+
+                    360º view here
                   </Button>
                   
                   <p className="text-xs text-muted-foreground text-center mt-4">
