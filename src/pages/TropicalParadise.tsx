@@ -80,15 +80,7 @@ const TropicalParadise = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background"
-    style={{
-    "--primary": "28 80% 52%",             // saffron orange
-    "--primary-foreground": "0 0% 100%",   // white
-    "--background": "40 100% 97%",         // soft cream
-    "--foreground": "20 80% 12%",          // deep brown
-    "--muted-foreground": "28 15% 45%",    // warm gray
-  } as React.CSSProperties}   // 👈 assert type here
-    >
+    <div className="min-h-screen bg-background">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
         <div className="container flex h-16 items-center px-4">

@@ -80,109 +80,111 @@ const Monastry1 = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Package Details */}
-          <div className="space-y-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Palmtree className="h-5 w-5 text-primary" />
-                  Monastry Highlights
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {packageDetails.highlights.map((highlight, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <Star className="h-4 w-4 text-primary fill-current mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{highlight}</span>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-primary" />
-                  7-Day Monastry Trip
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3 text-sm">
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 1-2: Arrival</h5>
-                    <p className="text-muted-foreground">text here</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 3-4: ---------</h5>
-                    <p className="text-muted-foreground">text here</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 5-6: ---------</h5>
-                    <p className="text-muted-foreground">text here</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 7: Farewell </h5>
-                    <p className="text-muted-foreground">text here!</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Waves className="h-5 w-5 text-primary" />
-                  Monastry Experiences
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-4">
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Overwater Bungalow Experience</h5>
-                    <p className="text-sm text-muted-foreground">Your private sanctuary features a glass-floor panel for underwater viewing, direct lagoon access, and a spacious deck with daybed. Watch tropical fish swim beneath your feet while enjoying morning coffee.</p>
-                  </div>
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Culinary </h5>
-                    <p className="text-sm text-muted-foreground">Savor intimate dining experiences from floating breakfast trays to torchlit beach dinners. Your personal chef creates customized menus featuring fresh local seafood, tropical fruits, and international cuisine.</p>
-                  </div>
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Wellness Journey</h5>
-                    <p className="text-sm text-muted-foreground">Indulge in synchronized spa treatments using indigenous ingredients like coconut oil and sea salt. Yoga sessions at sunrise, meditation by moonlight, and rejuvenating treatments in overwater spa pavilions.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* 360º View Section (right side, replaces booking form) */}
-    <section className="space-y-8">
+      <div className="container mx-auto px-4 py-16 space-y-12">
+  {/* 2-column layout for Highlights + Itinerary */}
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    {/* Highlights */}
+    <div className="space-y-8">
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <MapPin className="h-5 w-5 text-primary" />
-            Explore in 360°
+            <Palmtree className="h-5 w-5 text-primary" />
+            Monastry Highlights
           </CardTitle>
         </CardHeader>
-        <CardContent className="text-center space-y-4">
-          <p className="text-muted-foreground">
-            Take a virtual tour of the Monastry and experience its beauty before you arrive.
-          </p>
-          <Button 
-            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
-            size="lg"
-            onClick={() => navigate("/map")}
-          >
-            <Heart className="h-5 w-5 mr-2" />
-            360º View Here
-          </Button>
+        <CardContent className="space-y-4">
+          {packageDetails.highlights.map((highlight, index) => (
+            <div key={index} className="flex items-start gap-3">
+              <Star className="h-4 w-4 text-primary fill-current mt-0.5 flex-shrink-0" />
+              <span className="text-sm">{highlight}</span>
+            </div>
+          ))}
         </CardContent>
-        </Card>
-      </section>
-     </div>
+      </Card>
     </div>
+
+    {/* Itinerary */}
+    <div>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Calendar className="h-5 w-5 text-primary" />
+            7-Day Monastry Trip
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Itinerary Days */}
+          <div className="space-y-3 text-sm">
+            <div className="border-l-2 border-primary pl-4">
+              <h5 className="font-semibold">Day 1-2: Arrival</h5>
+              <p className="text-muted-foreground">text here</p>
+            </div>
+            <div className="border-l-2 border-primary pl-4">
+              <h5 className="font-semibold">Day 3-4: ---------</h5>
+              <p className="text-muted-foreground">text here</p>
+            </div>
+            <div className="border-l-2 border-primary pl-4">
+              <h5 className="font-semibold">Day 5-6: ---------</h5>
+              <p className="text-muted-foreground">text here</p>
+            </div>
+            <div className="border-l-2 border-primary pl-4">
+              <h5 className="font-semibold">Day 7: Farewell</h5>
+              <p className="text-muted-foreground">text here!</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
+  </div>
+
+  {/* 360º View Section (full width) */}
+  <Card>
+    <CardHeader>
+      <CardTitle className="flex items-center gap-2">
+        <MapPin className="h-5 w-5 text-primary" />
+        Explore in 360°
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="text-center space-y-4">
+      <p className="text-muted-foreground">
+        Take a virtual tour of the Monastry and experience its beauty before you arrive.
+      </p>
+      <Button 
+        className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+        size="lg"
+        onClick={() => navigate("/map")}
+      >
+        <Heart className="h-5 w-5 mr-2" />
+        360º View Here
+      </Button>
+    </CardContent>
+  </Card>
+
+  {/* Experiences Section (full width, below 360º) */}
+  <Card>
+    <CardHeader>
+      <CardTitle className="flex items-center gap-2">
+        <Waves className="h-5 w-5 text-primary" />
+        Monastry Experiences
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="space-y-4">
+      <div className="p-4 bg-primary/5 rounded-lg">
+        <h5 className="font-semibold mb-2">Overwater Bungalow Experience</h5>
+        <p className="text-sm text-muted-foreground">Your private sanctuary features ...</p>
+      </div>
+      <div className="p-4 bg-primary/5 rounded-lg">
+        <h5 className="font-semibold mb-2">Culinary</h5>
+        <p className="text-sm text-muted-foreground">Savor intimate dining experiences ...</p>
+      </div>
+      <div className="p-4 bg-primary/5 rounded-lg">
+        <h5 className="font-semibold mb-2">Wellness Journey</h5>
+        <p className="text-sm text-muted-foreground">Indulge in synchronized spa treatments ...</p>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+</div>
   );
 };
       
