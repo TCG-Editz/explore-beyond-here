@@ -81,7 +81,7 @@ const Monastry1 = () => {
       </section>
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Package Details */}
           <div className="space-y-8">
             <Card>
@@ -156,86 +156,34 @@ const Monastry1 = () => {
             </Card>
           </div>
 
-          {/* Booking Form */}
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle>Book Your Monastry1</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Enter first name" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Enter last name" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Enter email address" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="Enter phone number" />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="checkIn">Check-in Date</Label>
-                    <Input id="checkIn" type="date" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="guests">Number of Guests</Label>
-                    <Select defaultValue="2">
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="2">2 Guests</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="specialRequests">Special Requests</Label>
-                  <Textarea 
-                    id="specialRequests" 
-                    placeholder="Anniversary celebration, dietary requirements, etc."
-                    rows={3}
-                  />
-                </div>
-
-                <div className="border-t pt-6">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-lg font-semibold">Total Cost:</span>
-                    <span className="text-2xl font-bold text-primary">{packageDetails.price}</span>
-                  </div>
-                  
-                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70" size="lg"
-                    onClick={() => navigate("/map")}
-                  >
-                    <Heart className="h-5 w-5 mr-2" />
-
-                    360º view here
-                  </Button>
-                  
-                  <p className="text-xs text-muted-foreground text-center mt-4">
-                    Free cancellation up to 48 hours before check-in
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
+          {/* 360º View Section (right side, replaces booking form) */}
+    <section className="space-y-8">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <MapPin className="h-5 w-5 text-primary" />
+            Explore in 360°
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-center space-y-4">
+          <p className="text-muted-foreground">
+            Take a virtual tour of the Monastry and experience its beauty before you arrive.
+          </p>
+          <Button 
+            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+            size="lg"
+            onClick={() => navigate("/map")}
+          >
+            <Heart className="h-5 w-5 mr-2" />
+            360º View Here
+          </Button>
+        </CardContent>
+        </Card>
+      </section>
+     </div>
+    </div>
     </div>
   );
 };
-
+      
 export default Monastry1;
