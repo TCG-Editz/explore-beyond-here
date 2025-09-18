@@ -80,6 +80,29 @@ const Monastry1 = () => {
         </div>
       </section>
 
+      {/* 360º View Section (full width) */}
+  <Card>
+    <CardHeader>
+      <CardTitle className="flex items-center gap-2">
+        <MapPin className="h-5 w-5 text-primary" />
+        Explore in 360°
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="text-center space-y-4">
+      <p className="text-muted-foreground">
+        Take a virtual tour of the Monastry and experience its beauty before you arrive.
+      </p>
+      <Button 
+        className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+        size="lg"
+        onClick={() => navigate("/map")}
+      >
+        <Heart className="h-5 w-5 mr-2" />
+        360º View Here
+      </Button>
+    </CardContent>
+  </Card>
+
       <div className="container mx-auto px-4 py-16 space-y-12">
   {/* 2-column layout for Highlights + Itinerary */}
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -137,28 +160,7 @@ const Monastry1 = () => {
     </div>
   </div>
 
-  {/* 360º View Section (full width) */}
-  <Card>
-    <CardHeader>
-      <CardTitle className="flex items-center gap-2">
-        <MapPin className="h-5 w-5 text-primary" />
-        Explore in 360°
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="text-center space-y-4">
-      <p className="text-muted-foreground">
-        Take a virtual tour of the Monastry and experience its beauty before you arrive.
-      </p>
-      <Button 
-        className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
-        size="lg"
-        onClick={() => navigate("/map")}
-      >
-        <Heart className="h-5 w-5 mr-2" />
-        360º View Here
-      </Button>
-    </CardContent>
-  </Card>
+  
 
   {/* Experiences Section (full width, below 360º) */}
   <Card>
