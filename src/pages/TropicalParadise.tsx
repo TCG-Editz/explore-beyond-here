@@ -8,12 +8,12 @@ const TropicalParadise = () => {
   const navigate = useNavigate();
 
   const highlights = [
-    "Private beach access with crystal clear waters",
-    "Overwater bungalows with glass floor panels",
-    "World-class spa and wellness facilities", 
-    "Snorkeling and diving with tropical marine life",
-    "Fine dining with ocean views",
-    "Water sports and sunset cruises"
+    "Stunning structures reflecting centuries of tradition and craftsmanship.",
+    "Serene surroundings perfect for meditation and reflection",
+    "Rich history and rituals that showcase local customs", 
+    "Opportunities to learn about philosophies, scriptures, and practices.",
+    "Often nestled in mountains, forests, or near rivers offering breathtaking views.",
+    "Engage with monks and locals to understand daily monastic life."
   ];
 
   const packages = [
@@ -138,9 +138,9 @@ const TropicalParadise = () => {
               Experience Different Monastries
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Escape to a world where turquoise waters meet powder-soft beaches, and luxury knows no bounds. 
-              Our tropical paradise destinations offer the perfect blend of natural beauty, world-class amenities, 
-              and unforgettable experiences that will create memories to last a lifetime.
+              Discover the serenity and spiritual charm of monasteries, each offering unique traditions and breathtaking surroundings.
+              Journey through sacred spaces where culture, history, and tranquility come together in perfect harmony.
+              Immerse yourself in the peaceful aura of diverse monasteries, each with its own story and architectural beauty.
             </p>
           </div>
         </section>
