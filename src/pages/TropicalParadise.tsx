@@ -18,7 +18,7 @@ const TropicalParadise = () => {
 
   const packages = [
     {
-      name: "Monastry 1",
+      name: "Rumtek Monastry",
       duration: "7 days",
       price: "****",
       includes: ["1.", "2.", "3.", "4."]
@@ -190,7 +190,7 @@ const TropicalParadise = () => {
                   
                   <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
                           onClick={() => {
-                      if (pkg.name === "Monastry 1") {
+                      if (pkg.name === "Rumtek Monastry") {
                         navigate('/Monastry1');
                       } else if (pkg.name === "Monastry 2") {
                         navigate('/Monastry2');

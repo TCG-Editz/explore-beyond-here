@@ -17,12 +17,12 @@ const Monastry1 = () => {
     price: "₹10",
     description: "Perfect for Inner Peace",
     highlights: [
-      "Overwater bungalow with private deck",
-      "Private candlelit dinner on the beach",
-      "Couple's spa treatment with ocean views",
-      "Sunset cruise with champagne",
-      "Breakfast in bed service",
-      "Professional couple's photoshoot"
+      "One of the most important Buddhist monasteries in Sikkim, serving as the seat of the Karmapa lineage.",
+      "Traditional Tibetan-style design with intricate murals, carvings, and golden roofs.",
+      "Tranquil surroundings perfect for meditation and spiritual reflection.",
+      "Houses precious artifacts, scriptures, and the sacred throne of the Karmapa.",
+      "Famous for colorful celebrations like Losar (Tibetan New Year) and other rituals.",
+      "Set against the backdrop of lush hills, offering panoramic views of the surrounding valleys."
     ]
   };
 
@@ -126,39 +126,26 @@ const Monastry1 = () => {
       </Card>
     </div>
 
-    {/* Itinerary */}
-    <div>
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-primary" />
-            7-Day Monastry Trip
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {/* Itinerary Days */}
-          <div className="space-y-3 text-sm">
-            <div className="border-l-2 border-primary pl-4">
-              <h5 className="font-semibold">Day 1-2: Arrival</h5>
-              <p className="text-muted-foreground">text here</p>
-            </div>
-            <div className="border-l-2 border-primary pl-4">
-              <h5 className="font-semibold">Day 3-4: ---------</h5>
-              <p className="text-muted-foreground">text here</p>
-            </div>
-            <div className="border-l-2 border-primary pl-4">
-              <h5 className="font-semibold">Day 5-6: ---------</h5>
-              <p className="text-muted-foreground">text here</p>
-            </div>
-            <div className="border-l-2 border-primary pl-4">
-              <h5 className="font-semibold">Day 7: Farewell</h5>
-              <p className="text-muted-foreground">text here!</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
+    {/* History Section (instead of 7-Day Monastery Trip) */}
+<div>
+  <Card>
+    <CardHeader>
+      <CardTitle className="flex items-center gap-2">
+        <Calendar className="h-5 w-5 text-primary" />
+        Monastery History
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="space-y-5">
+      <p className="text-m text-foreground">
+        Rumtek Monastery, also known as the Dharmachakra Centre, was built in the 1960s under the guidance of the 16th Karmapa, Rangjung Rigpe Dorje. 
+        It serves as the main seat of the Karmapa lineage outside Tibet and is renowned for its traditional Tibetan architecture, sacred artifacts, and spiritual significance.
+      </p>
+      <p className="text-m text-foreground">
+        The monastery plays a key role in preserving Tibetan Buddhist culture, hosting annual festivals, and providing education to monks and practitioners from around the world.
+      </p>
+    </CardContent>
+  </Card>
+</div>
 
   
 
@@ -185,6 +172,7 @@ const Monastry1 = () => {
       </div>
     </CardContent>
   </Card>
+</div>
 </div>
 </div>
   );
