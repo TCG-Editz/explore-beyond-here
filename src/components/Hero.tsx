@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/13.jpg";
+import mainbg from "@/assets/MainBg.jpg";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${mainbg})` }}
       />
       
       {/* Gradient Overlay */}
