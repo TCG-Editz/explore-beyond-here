@@ -188,29 +188,36 @@ const Monastry1 = () => {
           </Card>
         </div>
 
-        {/* Experiences Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Waves className="h-5 w-5 text-primary" />
-              Monastry Experiences
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="p-4 bg-primary/5 rounded-lg">
-              <h5 className="font-semibold mb-2">Overwater Bungalow Experience</h5>
-              <p className="text-sm text-muted-foreground">Your private sanctuary features ...</p>
-            </div>
-            <div className="p-4 bg-primary/5 rounded-lg">
-              <h5 className="font-semibold mb-2">Culinary</h5>
-              <p className="text-sm text-muted-foreground">Savor intimate dining experiences ...</p>
-            </div>
-            <div className="p-4 bg-primary/5 rounded-lg">
-              <h5 className="font-semibold mb-2">Wellness Journey</h5>
-              <p className="text-sm text-muted-foreground">Indulge in synchronized spa treatments ...</p>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Tips for Monastery Section */}
+<Card>
+  <CardHeader>
+    <CardTitle className="flex items-center gap-2">
+      <Waves className="h-5 w-5 text-primary" />
+      Tips for Visiting a Monastery
+    </CardTitle>
+  </CardHeader>
+  <CardContent className="space-y-4">
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Respect Silence</h5>
+      <p className="text-sm text-muted-foreground">
+        Maintain a quiet demeanor to honor the meditation and prayer routines.
+      </p>
+    </div>
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Dress Modestly</h5>
+      <p className="text-sm text-muted-foreground">
+        Wear clothing that covers shoulders and knees, showing respect for local customs.
+      </p>
+    </div>
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Mindful Photography</h5>
+      <p className="text-sm text-muted-foreground">
+        Always ask permission before taking photos, especially inside prayer halls.
+      </p>
+    </div>
+  </CardContent>
+</Card>
+
       </div>
     </div>
   );
