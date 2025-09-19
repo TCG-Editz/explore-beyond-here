@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowLeft, Heart, MapPin, Calendar, Users, Star, Palmtree, Waves, Utensils } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import maldivesImage from "@/assets/maldives-resort.jpg";
+import rumtekm from "@/assets/rumtek monastry.jpg";
 
 const Monastry1 = () => {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Monastry1 = () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] overflow-hidden">
         <img 
-          src={maldivesImage} 
+          src={rumtekm} 
           alt="Romantic Getaway Package"
           className="w-full h-full object-cover"
         />
