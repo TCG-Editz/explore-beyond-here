@@ -1,15 +1,14 @@
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Heart, MapPin, Calendar, Users, Star, Palmtree, Waves, Utensils } from "lucide-react";
+import { ArrowLeft, Heart, MapPin, Calendar, Users, Star, Palmtree, Waves } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import rumtekm from "@/assets/rumtek monastry.jpg";
 
 const Monastry1 = () => {
   const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const utterancesRef = useRef([]);
 
   const packageDetails = {
     name: "Rumtek Monastry",
@@ -24,6 +23,34 @@ const Monastry1 = () => {
       "Famous for colorful celebrations like Losar (Tibetan New Year) and other rituals.",
       "Set against the backdrop of lush hills, offering panoramic views of the surrounding valleys."
     ]
+  };
+
+  const sentences = [
+    "Rumtek Monastery, also known as the Dharmachakra Centre, was built in the 1960s under the guidance of the 16th Karmapa, Rangjung Rigpe Dorje.",
+    "It serves as the main seat of the Karmapa lineage outside Tibet and is renowned for its traditional Tibetan architecture, sacred artifacts, and spiritual significance.",
+    "The monastery plays a key role in preserving Tibetan Buddhist culture, hosting annual festivals, and providing education to monks and practitioners from around the world."
+  ];
+
+  const readAloud = () => {
+    window.speechSynthesis.cancel();
+    utterancesRef.current = sentences.map((sentence, i) => {
+      const utterance = new SpeechSynthesisUtterance(sentence);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.onstart = () => setCurrentIndex(i);
+      utterance.onend = () => {
+        if (i === sentences.length - 1) setCurrentIndex(-1);
+      };
+      return utterance;
+    });
+    utterancesRef.current.forEach(utterance => window.speechSynthesis.speak(utterance));
+  };
+
+  const pauseSpeech = () => window.speechSynthesis.pause();
+  const resumeSpeech = () => window.speechSynthesis.resume();
+  const stopSpeech = () => {
+    window.speechSynthesis.cancel();
+    setCurrentIndex(-1);
   };
 
   return (
@@ -46,7 +73,7 @@ const Monastry1 = () => {
       <section className="relative h-[50vh] overflow-hidden">
         <img 
           src={rumtekm} 
-          alt="Romantic Getaway Package"
+          alt="Rumtek Monastery"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -80,102 +107,113 @@ const Monastry1 = () => {
         </div>
       </section>
 
-      {/* 360º View Section (full width) */}
-  <Card>
-    <CardHeader>
-      <CardTitle className="flex items-center gap-2">
-        <MapPin className="h-5 w-5 text-primary" />
-        Explore in 360°
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="text-center space-y-4">
-      <p className="text-muted-foreground">
-        Take a virtual tour of the Monastry and experience its beauty before you arrive.
-      </p>
-      <Button 
-        className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
-        size="lg"
-        onClick={() => navigate("/map")}
-      >
-        <Heart className="h-5 w-5 mr-2" />
-        360º View Here
-      </Button>
-    </CardContent>
-  </Card>
-
-      <div className="container mx-auto px-4 py-16 space-y-12">
-  {/* 2-column layout for Highlights + Itinerary */}
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-    {/* Highlights */}
-    <div className="space-y-8">
+      {/* 360º View Section */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Palmtree className="h-5 w-5 text-primary" />
-            Monastry Highlights
+            <MapPin className="h-5 w-5 text-primary" />
+            Explore in 360°
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          {packageDetails.highlights.map((highlight, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <Star className="h-4 w-4 text-primary fill-current mt-0.5 flex-shrink-0" />
-              <span className="text-sm">{highlight}</span>
-            </div>
-          ))}
+        <CardContent className="text-center space-y-4">
+          <p className="text-muted-foreground">
+            Take a virtual tour of the Monastry and experience its beauty before you arrive.
+          </p>
+          <Button 
+            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+            size="lg"
+            onClick={() => navigate("/map")}
+          >
+            <Heart className="h-5 w-5 mr-2" />
+            360º View Here
+          </Button>
         </CardContent>
       </Card>
+
+      <div className="container mx-auto px-4 py-16 space-y-12">
+        {/* 2-column layout for Highlights + History */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Highlights */}
+          <div className="space-y-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Palmtree className="h-5 w-5 text-primary" />
+                  Monastry Highlights
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {packageDetails.highlights.map((highlight, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <Star className="h-4 w-4 text-primary fill-current mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">{highlight}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* History Section with Read Aloud + Highlight */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-primary" />
+                Monastery History
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {sentences.map((sentence, i) => (
+                <p
+                  key={i}
+                  className={`text-m text-foreground ${currentIndex === i ? "bg-yellow-200" : ""} transition-colors`}
+                >
+                  {sentence}
+                </p>
+              ))}
+              <div className="flex gap-4 mt-4">
+                <Button onClick={readAloud} className="bg-primary text-white hover:bg-primary/90">
+                  Read Aloud
+                </Button>
+                <Button onClick={pauseSpeech} className="bg-yellow-500 text-white hover:bg-yellow-600">
+                  Pause
+                </Button>
+                <Button onClick={resumeSpeech} className="bg-green-500 text-white hover:bg-green-600">
+                  Resume
+                </Button>
+                <Button onClick={stopSpeech} className="bg-red-500 text-white hover:bg-red-600">
+                  Stop
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Experiences Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Waves className="h-5 w-5 text-primary" />
+              Monastry Experiences
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="p-4 bg-primary/5 rounded-lg">
+              <h5 className="font-semibold mb-2">Overwater Bungalow Experience</h5>
+              <p className="text-sm text-muted-foreground">Your private sanctuary features ...</p>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-lg">
+              <h5 className="font-semibold mb-2">Culinary</h5>
+              <p className="text-sm text-muted-foreground">Savor intimate dining experiences ...</p>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-lg">
+              <h5 className="font-semibold mb-2">Wellness Journey</h5>
+              <p className="text-sm text-muted-foreground">Indulge in synchronized spa treatments ...</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
-
-    {/* History Section (instead of 7-Day Monastery Trip) */}
-<div>
-  <Card>
-    <CardHeader>
-      <CardTitle className="flex items-center gap-2">
-        <Calendar className="h-5 w-5 text-primary" />
-        Monastery History
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-5">
-      <p className="text-m text-foreground">
-        Rumtek Monastery, also known as the Dharmachakra Centre, was built in the 1960s under the guidance of the 16th Karmapa, Rangjung Rigpe Dorje. 
-        It serves as the main seat of the Karmapa lineage outside Tibet and is renowned for its traditional Tibetan architecture, sacred artifacts, and spiritual significance.
-      </p>
-      <p className="text-m text-foreground">
-        The monastery plays a key role in preserving Tibetan Buddhist culture, hosting annual festivals, and providing education to monks and practitioners from around the world.
-      </p>
-    </CardContent>
-  </Card>
-</div>
-
-  
-
-  {/* Experiences Section (full width, below 360º) */}
-  <Card>
-    <CardHeader>
-      <CardTitle className="flex items-center gap-2">
-        <Waves className="h-5 w-5 text-primary" />
-        Monastry Experiences
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-4">
-      <div className="p-4 bg-primary/5 rounded-lg">
-        <h5 className="font-semibold mb-2">Overwater Bungalow Experience</h5>
-        <p className="text-sm text-muted-foreground">Your private sanctuary features ...</p>
-      </div>
-      <div className="p-4 bg-primary/5 rounded-lg">
-        <h5 className="font-semibold mb-2">Culinary</h5>
-        <p className="text-sm text-muted-foreground">Savor intimate dining experiences ...</p>
-      </div>
-      <div className="p-4 bg-primary/5 rounded-lg">
-        <h5 className="font-semibold mb-2">Wellness Journey</h5>
-        <p className="text-sm text-muted-foreground">Indulge in synchronized spa treatments ...</p>
-      </div>
-    </CardContent>
-  </Card>
-</div>
-</div>
-</div>
   );
 };
-      
+
 export default Monastry1;
