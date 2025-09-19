@@ -59,6 +59,8 @@ const Destinations = () => {
   const handleExploreClick = (destinationId: number) => {
     if (destinationId === 1) { // Tropical Paradise
       navigate('/tropical-paradise');
+    } else if (destinationId === 4){
+      navigate('/DigitalArchive');
     }
     // Add more destinations as needed
   };

@@ -12,10 +12,10 @@ const Monastry1 = () => {
   const navigate = useNavigate();
 
   const packageDetails = {
-    name: "Monastry1",
-    duration: "7 days / 6 nights",
-    price: "$2,099",
-    description: "Perfect for couples seeking intimacy and romance in paradise",
+    name: "Rumtek Monastry",
+    duration: "",
+    price: "₹10",
+    description: "Perfect for Inner Peace",
     highlights: [
       "Overwater bungalow with private deck",
       "Private candlelit dinner on the beach",
@@ -70,7 +70,7 @@ const Monastry1 = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5" />
-                <span>2 Guests</span>
+                <span>Guests</span>
               </div>
               <div className="text-2xl font-bold text-white">
                 {packageDetails.price}
