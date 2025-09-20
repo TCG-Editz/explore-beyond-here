@@ -1,33 +1,56 @@
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Crown, MapPin, Calendar, Users, Star, Utensils, Car, Sparkles } from "lucide-react";
+import { ArrowLeft, Heart, MapPin, Calendar, Users, Star, Palmtree, Waves } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import maldivesImage from "@/assets/maldives-resort.jpg";
+import rumtekm from "@/assets/rumtek monastry.jpg";
 
 const Monastry3 = () => {
   const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const utterancesRef = useRef([]);
 
   const packageDetails = {
-    name: "Monastry 3",
-    duration: "14 days / 13 nights",
-    price: "$4,299",
-    description: "Ultimate luxury experience with world-class service and amenities",
+    name: "Rumtek Monastry",
+    duration: "",
+    price: "₹10",
+    description: "Perfect for Inner Peace",
     highlights: [
-      "Presidential suite with panoramic ocean views",
-      "Private yacht with dedicated crew",
-      "Personal butler and concierge service",
-      "Michelin-starred dining experiences",
-      "Private helicopter transfers",
-      "Exclusive spa treatments",
-      "All premium activities included",
-      "24/7 luxury transportation",
-      "Private beach cabana",
-      "Celebrity chef cooking classes"
+      "One of the most important Buddhist monasteries in Sikkim, serving as the seat of the Karmapa lineage.",
+      "Traditional Tibetan-style design with intricate murals, carvings, and golden roofs.",
+      "Tranquil surroundings perfect for meditation and spiritual reflection.",
+      "Houses precious artifacts, scriptures, and the sacred throne of the Karmapa.",
+      "Famous for colorful celebrations like Losar (Tibetan New Year) and other rituals.",
+      "Set against the backdrop of lush hills, offering panoramic views of the surrounding valleys."
     ]
+  };
+
+  const sentences = [
+    "Rumtek Monastery, also known as the Dharmachakra Centre, was built in the 1960s under the guidance of the 16th Karmapa, Rangjung Rigpe Dorje.",
+    "It serves as the main seat of the Karmapa lineage outside Tibet and is renowned for its traditional Tibetan architecture, sacred artifacts, and spiritual significance.",
+    "The monastery plays a key role in preserving Tibetan Buddhist culture, hosting annual festivals, and providing education to monks and practitioners from around the world."
+  ];
+
+  const readAloud = () => {
+    window.speechSynthesis.cancel();
+    utterancesRef.current = sentences.map((sentence, i) => {
+      const utterance = new SpeechSynthesisUtterance(sentence);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.onstart = () => setCurrentIndex(i);
+      utterance.onend = () => {
+        if (i === sentences.length - 1) setCurrentIndex(-1);
+      };
+      return utterance;
+    });
+    utterancesRef.current.forEach(utterance => window.speechSynthesis.speak(utterance));
+  };
+
+  const pauseSpeech = () => window.speechSynthesis.pause();
+  const resumeSpeech = () => window.speechSynthesis.resume();
+  const stopSpeech = () => {
+    window.speechSynthesis.cancel();
+    setCurrentIndex(-1);
   };
 
   return (
@@ -41,7 +64,7 @@ const Monastry3 = () => {
             className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Packages
+            Back to other Monastries
           </Button>
         </div>
       </header>
@@ -49,17 +72,17 @@ const Monastry3 = () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] overflow-hidden">
         <img 
-          src={maldivesImage} 
-          alt="Luxury Escape Package"
+          src={rumtekm} 
+          alt="Rumtek Monastery"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center text-center text-white">
           <div className="max-w-4xl px-4">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <Crown className="h-6 w-6 text-yellow-400 fill-current" />
-              <Crown className="h-8 w-8 text-yellow-400 fill-current" />
-              <Crown className="h-6 w-6 text-yellow-400 fill-current" />
+              <Heart className="h-6 w-6 text-red-400 fill-current" />
+              <Heart className="h-8 w-8 text-red-400 fill-current" />
+              <Heart className="h-6 w-6 text-red-400 fill-current" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               {packageDetails.name}
@@ -74,7 +97,7 @@ const Monastry3 = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5" />
-                <span>2-6 Guests</span>
+                <span>Guests</span>
               </div>
               <div className="text-2xl font-bold text-white">
                 {packageDetails.price}
@@ -84,15 +107,39 @@ const Monastry3 = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
+      {/* 360º View Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <MapPin className="h-5 w-5 text-primary" />
+            Explore in 360°
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-center space-y-4">
+          <p className="text-muted-foreground">
+            Take a virtual tour of the Monastry and experience its beauty before you arrive.
+          </p>
+          <Button 
+            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+            size="lg"
+            onClick={() => navigate("/map")}
+          >
+            <Heart className="h-5 w-5 mr-2" />
+            360º View Here
+          </Button>
+        </CardContent>
+      </Card>
+
+      <div className="container mx-auto px-4 py-16 space-y-12">
+        {/* 2-column layout for Highlights + History */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Package Details */}
+          {/* Highlights */}
           <div className="space-y-8">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Crown className="h-5 w-5 text-primary" />
-                  Luxury Amenities
+                  <Palmtree className="h-5 w-5 text-primary" />
+                  Monastry Highlights
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -104,158 +151,73 @@ const Monastry3 = () => {
                 ))}
               </CardContent>
             </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-primary" />
-                  14-Day Luxury Itinerary
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3 text-sm">
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 1-3: Royal Arrival</h5>
-                    <p className="text-muted-foreground">Private helicopter transfer from airport. Presidential Suite welcome with champagne and exotic fruit platter. Personal butler introduction and preferences consultation.</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 4-6: Culinary Excellence</h5>
-                    <p className="text-muted-foreground">Private cooking masterclass with Michelin-starred chef. Wine pairing dinner on private yacht. Exclusive access to chef's table at underwater restaurant.</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 7-9: Wellness & Rejuvenation</h5>
-                    <p className="text-muted-foreground">Signature spa treatments in private overwater pavilion. Daily yoga with personal instructor. Meditation sessions with world-renowned wellness guru.</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 10-12: Exclusive Experiences</h5>
-                    <p className="text-muted-foreground">Private island picnic accessible only by helicopter. Sunset dinner on sandbank with live orchestra. Night diving with marine biologist in bioluminescent waters.</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 13-14: Grand Finale</h5>
-                    <p className="text-muted-foreground">VIP shopping experience with personal stylist. Farewell gala dinner with celebrity chef presentation. Luxury souvenir collection and memory album.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="h-5 w-5 text-primary" />
-                  Luxury Experiences
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-4">
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Presidential Suite Paradise</h5>
-                    <p className="text-sm text-muted-foreground">Your 500sqm overwater palace features panoramic ocean views, private infinity pool, personal elevator, and dedicated yacht berth. Floor-to-ceiling windows showcase endless azure horizons while marble bathrooms offer rainfall showers and gold fixtures.</p>
-                  </div>
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Michelin-Starred Gastronomy</h5>
-                    <p className="text-sm text-muted-foreground">Savor exclusive culinary creations by internationally acclaimed chefs. From molecular gastronomy dinners suspended over lagoons to traditional Maldivian feasts prepared by local masters, every meal is a masterpiece.</p>
-                  </div>
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Unparalleled Service Excellence</h5>
-                    <p className="text-sm text-muted-foreground">Your dedicated team includes a personal butler, private chef, massage therapist, and concierge. Anticipating your every need, they ensure seamless luxury from sunrise yoga to midnight stargazing sessions.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
-          {/* Booking Form */}
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle>Book Your Luxury Escape</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Enter first name" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Enter last name" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Enter email address" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="Enter phone number" />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="checkIn">Check-in Date</Label>
-                    <Input id="checkIn" type="date" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="guests">Number of Guests</Label>
-                    <Select>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select guests" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="2">2 Guests</SelectItem>
-                        <SelectItem value="3">3 Guests</SelectItem>
-                        <SelectItem value="4">4 Guests</SelectItem>
-                        <SelectItem value="5">5 Guests</SelectItem>
-                        <SelectItem value="6">6 Guests</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="suite">Suite Preference</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select suite type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="presidential">Presidential Suite</SelectItem>
-                      <SelectItem value="royal">Royal Suite</SelectItem>
-                      <SelectItem value="penthouse">Penthouse Suite</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="specialRequests">VIP Requests</Label>
-                  <Textarea 
-                    id="specialRequests" 
-                    placeholder="Special celebrations, dietary preferences, butler services, etc."
-                    rows={3}
-                  />
-                </div>
-
-                <div className="border-t pt-6">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-lg font-semibold">Total Cost:</span>
-                    <span className="text-2xl font-bold text-primary">{packageDetails.price}</span>
-                  </div>
-                  
-                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70" size="lg">
-                    <Crown className="h-5 w-5 mr-2" />
-                    Book Luxury Escape
-                  </Button>
-                  
-                  <p className="text-xs text-muted-foreground text-center mt-4">
-                    VIP concierge will contact you within 2 hours to finalize arrangements
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          {/* History Section with Read Aloud + Highlight */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-primary" />
+                Monastery History
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {sentences.map((sentence, i) => (
+                <p
+                  key={i}
+                  className={`text-m text-foreground ${currentIndex === i ? "bg-yellow-200" : ""} transition-colors`}
+                >
+                  {sentence}
+                </p>
+              ))}
+              <div className="flex gap-4 mt-4">
+                <Button onClick={readAloud} className="bg-primary text-white hover:bg-primary/90">
+                  Read Aloud
+                </Button>
+                <Button onClick={pauseSpeech} className="bg-yellow-500 text-white hover:bg-yellow-600">
+                  Pause
+                </Button>
+                <Button onClick={resumeSpeech} className="bg-green-500 text-white hover:bg-green-600">
+                  Resume
+                </Button>
+                <Button onClick={stopSpeech} className="bg-red-500 text-white hover:bg-red-600">
+                  Stop
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
+
+        {/* Tips for Monastery Section */}
+<Card>
+  <CardHeader>
+    <CardTitle className="flex items-center gap-2">
+      <Waves className="h-5 w-5 text-primary" />
+      Tips for Visiting a Monastery
+    </CardTitle>
+  </CardHeader>
+  <CardContent className="space-y-4">
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Respect Silence</h5>
+      <p className="text-sm text-muted-foreground">
+        Maintain a quiet demeanor to honor the meditation and prayer routines.
+      </p>
+    </div>
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Dress Modestly</h5>
+      <p className="text-sm text-muted-foreground">
+        Wear clothing that covers shoulders and knees, showing respect for local customs.
+      </p>
+    </div>
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Mindful Photography</h5>
+      <p className="text-sm text-muted-foreground">
+        Always ask permission before taking photos, especially inside prayer halls.
+      </p>
+    </div>
+  </CardContent>
+</Card>
+
       </div>
     </div>
   );

@@ -1,29 +1,56 @@
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Heart, MapPin, Calendar, Users, Star, Palmtree, Waves, Utensils } from "lucide-react";
+import { ArrowLeft, Heart, MapPin, Calendar, Users, Star, Palmtree, Waves } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import maldivesImage from "@/assets/maldives-resort.jpg";
+import rumtekm from "@/assets/rumtek monastry.jpg";
 
-const Monastry9= () => {
+const Monastry9 = () => {
   const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const utterancesRef = useRef([]);
 
   const packageDetails = {
-    name: "Monastry 9",
-    duration: "7 days / 6 nights",
-    price: "$2,099",
-    description: "Perfect for couples seeking intimacy and romance in paradise",
+    name: "Rumtek Monastry",
+    duration: "",
+    price: "₹10",
+    description: "Perfect for Inner Peace",
     highlights: [
-      "Overwater bungalow with private deck",
-      "Private candlelit dinner on the beach",
-      "Couple's spa treatment with ocean views",
-      "Sunset cruise with champagne",
-      "Breakfast in bed service",
-      "Professional couple's photoshoot"
+      "One of the most important Buddhist monasteries in Sikkim, serving as the seat of the Karmapa lineage.",
+      "Traditional Tibetan-style design with intricate murals, carvings, and golden roofs.",
+      "Tranquil surroundings perfect for meditation and spiritual reflection.",
+      "Houses precious artifacts, scriptures, and the sacred throne of the Karmapa.",
+      "Famous for colorful celebrations like Losar (Tibetan New Year) and other rituals.",
+      "Set against the backdrop of lush hills, offering panoramic views of the surrounding valleys."
     ]
+  };
+
+  const sentences = [
+    "Rumtek Monastery, also known as the Dharmachakra Centre, was built in the 1960s under the guidance of the 16th Karmapa, Rangjung Rigpe Dorje.",
+    "It serves as the main seat of the Karmapa lineage outside Tibet and is renowned for its traditional Tibetan architecture, sacred artifacts, and spiritual significance.",
+    "The monastery plays a key role in preserving Tibetan Buddhist culture, hosting annual festivals, and providing education to monks and practitioners from around the world."
+  ];
+
+  const readAloud = () => {
+    window.speechSynthesis.cancel();
+    utterancesRef.current = sentences.map((sentence, i) => {
+      const utterance = new SpeechSynthesisUtterance(sentence);
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.onstart = () => setCurrentIndex(i);
+      utterance.onend = () => {
+        if (i === sentences.length - 1) setCurrentIndex(-1);
+      };
+      return utterance;
+    });
+    utterancesRef.current.forEach(utterance => window.speechSynthesis.speak(utterance));
+  };
+
+  const pauseSpeech = () => window.speechSynthesis.pause();
+  const resumeSpeech = () => window.speechSynthesis.resume();
+  const stopSpeech = () => {
+    window.speechSynthesis.cancel();
+    setCurrentIndex(-1);
   };
 
   return (
@@ -37,7 +64,7 @@ const Monastry9= () => {
             className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Packages
+            Back to other Monastries
           </Button>
         </div>
       </header>
@@ -45,8 +72,8 @@ const Monastry9= () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] overflow-hidden">
         <img 
-          src={maldivesImage} 
-          alt="Romantic Getaway Package"
+          src={rumtekm} 
+          alt="Rumtek Monastery"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -70,7 +97,7 @@ const Monastry9= () => {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5" />
-                <span>2 Guests</span>
+                <span>Guests</span>
               </div>
               <div className="text-2xl font-bold text-white">
                 {packageDetails.price}
@@ -80,15 +107,39 @@ const Monastry9= () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
+      {/* 360º View Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <MapPin className="h-5 w-5 text-primary" />
+            Explore in 360°
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-center space-y-4">
+          <p className="text-muted-foreground">
+            Take a virtual tour of the Monastry and experience its beauty before you arrive.
+          </p>
+          <Button 
+            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+            size="lg"
+            onClick={() => navigate("/map")}
+          >
+            <Heart className="h-5 w-5 mr-2" />
+            360º View Here
+          </Button>
+        </CardContent>
+      </Card>
+
+      <div className="container mx-auto px-4 py-16 space-y-12">
+        {/* 2-column layout for Highlights + History */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Package Details */}
+          {/* Highlights */}
           <div className="space-y-8">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Palmtree className="h-5 w-5 text-primary" />
-                  Package Highlights
+                  Monastry Highlights
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -100,136 +151,73 @@ const Monastry9= () => {
                 ))}
               </CardContent>
             </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-primary" />
-                  7-Day Romantic Itinerary
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3 text-sm">
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 1-2: Arrival & Overwater Bliss</h5>
-                    <p className="text-muted-foreground">Private seaplane transfer to your overwater bungalow. Welcome champagne ceremony at sunset. Private beach dinner under the stars with live acoustic music.</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 3-4: Underwater Adventures</h5>
-                    <p className="text-muted-foreground">Couples snorkeling with marine biologist guide. Private yacht sunset cruise with champagne tasting. Floating breakfast served in your lagoon.</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 5-6: Spa & Romance</h5>
-                    <p className="text-muted-foreground">Couples spa treatment in overwater pavilion. Professional romantic photoshoot at golden hour. Private cooking class with world-renowned chef.</p>
-                  </div>
-                  <div className="border-l-2 border-primary pl-4">
-                    <h5 className="font-semibold">Day 7: Farewell Paradise</h5>
-                    <p className="text-muted-foreground">Final breakfast in bed. Memory book presentation ceremony. Private transfer with champagne farewell toast.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Waves className="h-5 w-5 text-primary" />
-                  Romantic Experiences
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-4">
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Overwater Bungalow Experience</h5>
-                    <p className="text-sm text-muted-foreground">Your private sanctuary features a glass-floor panel for underwater viewing, direct lagoon access, and a spacious deck with daybed. Watch tropical fish swim beneath your feet while enjoying morning coffee.</p>
-                  </div>
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Culinary Romance</h5>
-                    <p className="text-sm text-muted-foreground">Savor intimate dining experiences from floating breakfast trays to torchlit beach dinners. Your personal chef creates customized menus featuring fresh local seafood, tropical fruits, and international cuisine.</p>
-                  </div>
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <h5 className="font-semibold mb-2">Couple's Wellness Journey</h5>
-                    <p className="text-sm text-muted-foreground">Indulge in synchronized spa treatments using indigenous ingredients like coconut oil and sea salt. Yoga sessions at sunrise, meditation by moonlight, and rejuvenating treatments in overwater spa pavilions.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
-          {/* Booking Form */}
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle>Book Your Romantic Getaway</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Enter first name" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Enter last name" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Enter email address" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="Enter phone number" />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="checkIn">Check-in Date</Label>
-                    <Input id="checkIn" type="date" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="guests">Number of Guests</Label>
-                    <Select defaultValue="2">
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="2">2 Guests</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="specialRequests">Special Requests</Label>
-                  <Textarea 
-                    id="specialRequests" 
-                    placeholder="Anniversary celebration, dietary requirements, etc."
-                    rows={3}
-                  />
-                </div>
-
-                <div className="border-t pt-6">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-lg font-semibold">Total Cost:</span>
-                    <span className="text-2xl font-bold text-primary">{packageDetails.price}</span>
-                  </div>
-                  
-                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70" size="lg">
-                    <Heart className="h-5 w-5 mr-2" />
-                    Book Romantic Getaway
-                  </Button>
-                  
-                  <p className="text-xs text-muted-foreground text-center mt-4">
-                    Free cancellation up to 48 hours before check-in
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          {/* History Section with Read Aloud + Highlight */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-primary" />
+                Monastery History
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {sentences.map((sentence, i) => (
+                <p
+                  key={i}
+                  className={`text-m text-foreground ${currentIndex === i ? "bg-yellow-200" : ""} transition-colors`}
+                >
+                  {sentence}
+                </p>
+              ))}
+              <div className="flex gap-4 mt-4">
+                <Button onClick={readAloud} className="bg-primary text-white hover:bg-primary/90">
+                  Read Aloud
+                </Button>
+                <Button onClick={pauseSpeech} className="bg-yellow-500 text-white hover:bg-yellow-600">
+                  Pause
+                </Button>
+                <Button onClick={resumeSpeech} className="bg-green-500 text-white hover:bg-green-600">
+                  Resume
+                </Button>
+                <Button onClick={stopSpeech} className="bg-red-500 text-white hover:bg-red-600">
+                  Stop
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
+
+        {/* Tips for Monastery Section */}
+<Card>
+  <CardHeader>
+    <CardTitle className="flex items-center gap-2">
+      <Waves className="h-5 w-5 text-primary" />
+      Tips for Visiting a Monastery
+    </CardTitle>
+  </CardHeader>
+  <CardContent className="space-y-4">
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Respect Silence</h5>
+      <p className="text-sm text-muted-foreground">
+        Maintain a quiet demeanor to honor the meditation and prayer routines.
+      </p>
+    </div>
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Dress Modestly</h5>
+      <p className="text-sm text-muted-foreground">
+        Wear clothing that covers shoulders and knees, showing respect for local customs.
+      </p>
+    </div>
+    <div className="p-4 bg-primary/5 rounded-lg">
+      <h5 className="font-semibold mb-2">Mindful Photography</h5>
+      <p className="text-sm text-muted-foreground">
+        Always ask permission before taking photos, especially inside prayer halls.
+      </p>
+    </div>
+  </CardContent>
+</Card>
+
       </div>
     </div>
   );

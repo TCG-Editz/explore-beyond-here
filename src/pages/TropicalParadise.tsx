@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, MapPin, Star, Calendar, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import maldivesImage from "@/assets/maldives-resort.jpg";
+import maldivesImage from "@/assets/monastryimg.jpg";
 
 const TropicalParadise = () => {
   const navigate = useNavigate();
@@ -19,62 +19,62 @@ const TropicalParadise = () => {
   const packages = [
     {
       name: "Rumtek Monastry",
-      duration: "7 days",
-      price: "****",
+      duration: "",
+      price: "₹10",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 2", 
-      duration: "10 days",
-      price: "****",
+      duration: "",
+      price: "₹15",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 3",
-      duration: "14 days", 
-      price: "****",
+      duration: "", 
+      price: "₹20",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 4",
-      duration: "7 days",
-      price: "****",
+      duration: "",
+      price: "₹20",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 5",
-      duration: "6 days",
-      price: "****",
+      duration: "",
+      price: "₹30",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 6",
-      duration: "5 days",
-      price: "****",
+      duration: "",
+      price: "₹10",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 7",
-      duration: "4 days",
-      price: "****",
+      duration: "",
+      price: "₹15",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 8",
-      duration: "3 days",
-      price: "****",
+      duration: "",
+      price: "₹20",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 9",
-      duration: "2 days",
-      price: "****",
+      duration: "",
+      price: "₹30",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
       name: "Monastry 10",
-      duration: "1 day",
-      price: "****",
+      duration: "",
+      price: "₹10",
       includes: ["1.", "2.", "3.", "4."]
     },
   ];

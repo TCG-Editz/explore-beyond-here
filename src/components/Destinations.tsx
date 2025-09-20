@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import maldivesImage from "@/assets/13.jpg";
+import maldivesImage from "@/assets/monastryimg.jpg";
 import mountainImage from "@/assets/mountain-adventure.jpg";
 import culturalImage from "@/assets/cultural-heritage.jpg";
 
@@ -26,7 +26,7 @@ const destinations = [
   },
   {
     id: 3,
-    title: "Cultural Heritage",
+    title: "Cultural Calendar",
     description: "Immerse yourself in rich history, ancient traditions, and architectural wonders.",
     image: culturalImage,
     price: "none",
@@ -36,7 +36,7 @@ const destinations = [
   {
     id: 4,
     title: "Digital Archive",
-    description: "Immerse yourself in rich history, ancient traditions, and architectural wonders.",
+    description: "Wonderful photos about Monastries here.",
     image: culturalImage,
     price: "none",
     duration: "0 days",
@@ -45,7 +45,7 @@ const destinations = [
   {
     id: 5,
     title: "Handicrafts",
-    description: "Experience breathtaking landscapes and thrilling outdoor spots where u can have fun.",
+    description: "Experience fine Handicrafts.",
     image: mountainImage,
     price: "none",
     duration: "5-10 days",
@@ -61,6 +61,8 @@ const Destinations = () => {
       navigate('/tropical-paradise');
     } else if (destinationId === 4){
       navigate('/DigitalArchive');
+    } else if (destinationId === 3) {   
+          navigate("/cultural-calendar");
     }
     // Add more destinations as needed
   };
