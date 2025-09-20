@@ -30,7 +30,7 @@ const TropicalParadise = () => {
       includes: ["1.Spectacular view", "2.Historical significance", "3.Golden Buddha statue"]
     },
     {
-      name: " Pemyangtse Monastry",
+      name: "Pemyangtse Monastry",
       duration: "",
       price: "₹10",
       includes: ["1.Oldest buddhist traditons", "2.Witness rare arts and sculptures", "3.Capture panoramic himalayan view"]
@@ -193,23 +193,23 @@ const TropicalParadise = () => {
                           onClick={() => {
                       if (pkg.name === "Rumtek Monastry") {
                         navigate('/Monastry1');
-                      } else if (pkg.name === "Monastry 2") {
+                      } else if (pkg.name === "Raldang Monastery") {
                         navigate('/Monastry2');
-                      } else if (pkg.name === "Monastry 3") {
+                      } else if (pkg.name === "Pemyangtse Monastry") {
                         navigate('/Monastry3');
-                      } else if (pkg.name === "Monastry 4") {
+                      } else if (pkg.name === "Tashiding Monastery") {
                         navigate('/Monastry4');
-                      } else if (pkg.name === "Monastry 5") {
+                      } else if (pkg.name === "Phodong Monastery") {
                         navigate('/Monastry5');
-                      } else if (pkg.name === "Monastry 6") {
+                      } else if (pkg.name === "Dubdi Monastery") {
                         navigate('/Monastry6');
-                      } else if (pkg.name === "Monastry 7") {
+                      } else if (pkg.name === "Sikkim's Ravangla Buddha Park & Monastery") {
                         navigate('/Monastry7');
-                      } else if (pkg.name === "Monastry 8") {
+                      } else if (pkg.name === "Enchey Monastery") {
                         navigate('/Monastry8');
-                      } else if (pkg.name === "Monastry 9") {
+                      } else if (pkg.name === "Lingdum Monastery") {
                         navigate('/Monastry9');
-                      } else if (pkg.name === "Monastry 10") {
+                      } else if (pkg.name === "Bongthang Monastery") {
                         navigate('/Monastry10');
                       }
                     }}
