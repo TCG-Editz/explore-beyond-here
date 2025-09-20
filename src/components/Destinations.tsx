@@ -50,7 +50,16 @@ const destinations = [
     price: "none",
     duration: "5-10 days",
     category: "Crafts"
-  }
+  },
+{
+    id: 6,
+    title: "Map",
+    description: "Heritage",
+    image: maldivesImage,
+    price: "none",
+    duration: "",
+    category: "Map"
+  },
 ];
 
 const Destinations = () => {
@@ -63,6 +72,8 @@ const Destinations = () => {
       navigate('/DigitalArchive');
     } else if (destinationId === 3) {   
           navigate("/cultural-calendar");
+    } else if (destinationId === 6) {   
+          navigate("/Mmap");
     }
     // Add more destinations as needed
   };
