@@ -24,59 +24,60 @@ const TropicalParadise = () => {
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 2", 
+      name: "Raldang Monastery", 
       duration: "",
       price: "₹15",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 3",
+      name: " Pemyangtse Monastry",
+      duration: "",
+      price: "₹10",
+      includes: ["1.", "2.", "3.", "4."]
+    },
+    {
+      name: "Tashiding Monastery",
       duration: "", 
       price: "₹20",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 4",
+      name: "Phodong Monastery",
       duration: "",
       price: "₹20",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 5",
+      name: "Dubdi Monastery",
       duration: "",
       price: "₹30",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 6",
+      name: "Sikkim's Ravangla Buddha Park & Monastery",
       duration: "",
       price: "₹10",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 7",
+      name: "Enchey Monastery",
       duration: "",
       price: "₹15",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 8",
+      name: "Lingdum Monastery",
       duration: "",
       price: "₹20",
       includes: ["1.", "2.", "3.", "4."]
     },
     {
-      name: "Monastry 9",
+      name: "Bongthang Monastery",
       duration: "",
       price: "₹30",
       includes: ["1.", "2.", "3.", "4."]
     },
-    {
-      name: "Monastry 10",
-      duration: "",
-      price: "₹10",
-      includes: ["1.", "2.", "3.", "4."]
-    },
+    
   ];
 
   return (
