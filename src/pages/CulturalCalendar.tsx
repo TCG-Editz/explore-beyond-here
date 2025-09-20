@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import culturalImage from "@/assets/cultural-heritage.jpg";
+import culturalImage from "@/assets/Culturalimg.jpeg";
 
 const CulturalCalendar = () => {
   const navigate = useNavigate();
