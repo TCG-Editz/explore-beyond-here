@@ -18,7 +18,7 @@ import Monastry9 from "@/pages/Monastry9";
 import Monastry10 from "@/pages/Monastry10";
 import MapPage from "@/pages/MapPage";
 import GalleryPage from "@/pages/digitalpage";
-import CulturalCalendar from "@/pages/CulturalCalander";
+import CulturalCalendar from "@/pages/CulturalCalendar";
 import Mmap from "@/pages/Mmap";
 
 
