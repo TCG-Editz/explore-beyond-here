@@ -18,7 +18,8 @@ import Monastry9 from "@/pages/Monastry9";
 import Monastry10 from "@/pages/Monastry10";
 import MapPage from "@/pages/MapPage";
 import GalleryPage from "@/pages/digitalpage";
-import CulturalCalendar from "@/pages/CulturalCalendar";
+import CulturalCalendar from "@/pages/CulturalCalander";
+import Mmap from "@/pages/Mmap";
 
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/map" element={<MapPage />} />
           <Route path="/DigitalArchive" element={<GalleryPage />} />
           <Route path="/cultural-calendar" element={<CulturalCalendar />} />
+<Route path="/Mmap" element={<Mmap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
