@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import culturalImage from "@/assets/Culturalimg.jpeg";
+import culturalImae from "@/assets/monestry final plan.jpg";
 
 const Mmap = () => {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ const Mmap = () => {
     <div className="relative w-screen h-screen">
       {/* Fullscreen Image */}
       <img
-        src={culturalImage}
+        src={culturalImae}
         alt="Cultural Calendar"
         className="w-full h-full object-cover"
       />
