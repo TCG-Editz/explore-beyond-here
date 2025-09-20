@@ -21,61 +21,61 @@ const TropicalParadise = () => {
       name: "Rumtek Monastry",
       duration: "",
       price: "₹10",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Experience spritual serenity", "2.Witness grand rituals" , "3.Beautiful Tibettan architecture"]
     },
     {
       name: "Raldang Monastery", 
       duration: "",
       price: "₹15",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Spectacular view", "2.Historical significance", "3.Golden Buddha statue"]
     },
     {
       name: " Pemyangtse Monastry",
       duration: "",
       price: "₹10",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Oldest buddhist traditons", "2.Witness rare arts and sculptures", "3.Capture panoramic himalayan view"]
     },
     {
       name: "Tashiding Monastery",
       duration: "", 
       price: "₹20",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.See sacred stupas cave and mani stones", "2.Experience spritual serenity", "3.Experience mystical Bumchu festival"]
     },
     {
       name: "Phodong Monastery",
       duration: "",
       price: "₹20",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Peaceful ambience", "2.Buddhist pilgrimage"]
     },
     {
       name: "Dubdi Monastery",
       duration: "",
       price: "₹30",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Historical significance", "2.Witness grand rituals",]
     },
     {
       name: "Sikkim's Ravangla Buddha Park & Monastery",
       duration: "",
       price: "₹10",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Rich murals and paintings", "2.Buddhist pilgrimage"]
     },
     {
       name: "Enchey Monastery",
       duration: "",
       price: "₹15",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Spectacular view", "2.Historical and spritual importance"]
     },
     {
       name: "Lingdum Monastery",
       duration: "",
       price: "₹20",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1. Witness grand rituals", "2.Beautiful Tibettan architecture"]
     },
     {
       name: "Bongthang Monastery",
       duration: "",
       price: "₹30",
-      includes: ["1.", "2.", "3.", "4."]
+      includes: ["1.Spectacular view", "2.Witness rare arts and sculptures"]
     },
     
   ];
